@@ -1,1 +1,4 @@
 settings.php
+.nova/
+.gitignore
+.DS_Store

@@ -1,12 +1,12 @@
 <?php
 require_once "../includes/settings.php";
 if (!isset($_POST["id"])) {
-  echo "Något gick tyvärr fel. [Id saknas]";
+  echo "Något gick tyvärr fel. Teknisk info: [Id saknas]";
   die();
 }
 
 if (!($pa_url = get_pa_url($_POST["to"]))) {
-  echo "Något gick tyvärr fel. [URL saknas för nummer]";
+  echo "Något gick tyvärr fel. Teknisk info: [URL saknas för nummer]";
   die();
 }
 
@@ -26,11 +26,11 @@ $options = [
   ],
 ];
 $context = stream_context_create($options);
-$result = file_get_contents($pa_url["url"], false, $context);
+$result = file_get_contents($pa_url, false, $context);
 if ($result === false) {
-  echo "Något gick tyvärr fel. Försök igen eller kontakta din arbetsledare personligen.";
+  echo "Något gick tyvärr fel. Teknisk info: [PA svarade inte som förväntat]";
 } else {
-  echo "Din sjukanmälan är registrerad. Krya på dig!";
+  echo $result;
 }
 
 ?>
