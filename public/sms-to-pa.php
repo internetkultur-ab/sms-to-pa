@@ -1,7 +1,27 @@
 <?php
 require_once "../includes/settings.php";
+if (!isset($_POST["direction"])) {
+  echo "Något gick tyvärr fel. Teknisk info: [direction saknas]";
+  die();
+}
 if (!isset($_POST["id"])) {
   echo "Något gick tyvärr fel. Teknisk info: [Id saknas]";
+  die();
+}
+if (!isset($_POST["from"])) {
+  echo "Något gick tyvärr fel. Teknisk info: [from saknas]";
+  die();
+}
+if (!isset($_POST["to"])) {
+  echo "Något gick tyvärr fel. Teknisk info: [to saknas]";
+  die();
+}
+if (!isset($_POST["created"])) {
+  echo "Något gick tyvärr fel. Teknisk info: [created saknas]";
+  die();
+}
+if (!isset($_POST["message"])) {
+  echo "Något gick tyvärr fel. Teknisk info: [message saknas]";
   die();
 }
 
